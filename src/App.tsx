@@ -1,10 +1,10 @@
 import './App.css';
-import Card from './Card';
+import Cards from './Cards';
 
 function App() {
   return (
     <div className="App">
-      <Card countryName='India'/>
+      <Cards/>
     </div>
   );
 }

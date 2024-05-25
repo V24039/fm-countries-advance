@@ -76,6 +76,12 @@ const Card = ({ countryName }: ICardProps) => {
   return (
     <div className="element">
       <img alt={countryDetails.name} src={countryDetails.flag}/>
+      <div className="country_details">
+        <h2>{countryDetails.name}</h2>
+        <p><span>Population:</span> <span>{countryDetails.population}</span></p>
+        <p><span>Region:</span> <span>{countryDetails.region}</span></p>
+        <p><span>Capital:</span> <span>{countryDetails.capital}</span></p>
+      </div>
     </div>
   );
 };

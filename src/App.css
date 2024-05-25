@@ -9,6 +9,10 @@
   --light-bg: hsl(0, 0%, 98%);
 }
 
+img {
+  width: 100%;
+}
+
 body {
   background-color: var(--dark-bg);
   color: var(--dark-text);
@@ -17,7 +21,41 @@ body {
   font-family: "Nunito Sans", sans-serif;
 }
 
+.App {
+  margin-inline: 50px;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 30px;
+  row-gap: 50px;
+}
+
 .element {
   background-color: var(--dark-ele);
-  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+}
+
+.country_details {
+  padding: 0px 20px 30px;
+  margin: auto;
+  color: var(--dark-text);
+}
+
+.country_details p {
+  line-height: 70%;
+}
+
+.country_details p span:nth-child(2) {
+  font-weight: 100;
+}
+
+.country_details p span:nth-child(1) {
+  font-weight: 600;
+}
+
+.country_details h1 {
+  font-weight: 800;
 }
