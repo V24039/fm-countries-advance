@@ -1,67 +1,95 @@
-export interface CountryDetails {
-  name: string;
-  topLevelDomain: string[];
-  alpha2Code: string;
-  alpha3Code: string;
-  callingCodes: string[];
-  capital?: string;
-  altSpellings?: string[];
-  subregion: string;
-  region: string;
-  population: number;
-  latlng?: number[];
-  demonym: string;
-  area?: number;
-  timezones: string[];
-  borders?: string[];
-  nativeName: string;
-  numericCode: string;
-  flags: Flags;
-  currencies?: Currency[];
-  languages: Language[];
-  translations: Translations;
-  flag: string;
-  regionalBlocs?: RegionalBloc[];
-  cioc?: string;
-  independent: boolean;
-  gini?: number;
+export type CountryDetails = {
+  name:         Name;
+  tld:          string[];
+  cca2:         string;
+  ccn3:         string;
+  cca3:         string;
+  independent:  boolean;
+  status:       string;
+  unMember:     boolean;
+  currencies:   Currencies;
+  idd:          Idd;
+  capital:      string[];
+  altSpellings: string[];
+  region:       string;
+  languages:    Languages;
+  translations: { [key: string]: Translation };
+  latlng:       number[];
+  landlocked:   boolean;
+  area:         number;
+  demonyms:     Demonyms;
+  flag:         string;
+  maps:         Maps;
+  population:   number;
+  car:          Car;
+  timezones:    string[];
+  continents:   string[];
+  flags:        Flags;
+  coatOfArms:   CoatOfArms;
+  startOfWeek:  string;
+  capitalInfo:  CapitalInfo;
 }
 
-export interface Currency {
-  code: string;
-  name: string;
+export type CapitalInfo = {
+  latlng: number[];
+}
+
+export type Car = {
+  signs: string[];
+  side:  string;
+}
+
+export type CoatOfArms = {
+}
+
+export type Currencies = {
+  SHP: Shp;
+}
+
+export type Shp = {
+  name:   string;
   symbol: string;
 }
 
-export interface Flags {
-  svg: string;
+export type Demonyms = {
+  eng: Eng;
+}
+
+export type Eng = {
+  f: string;
+  m: string;
+}
+
+export type Flags = {
   png: string;
+  svg: string;
 }
 
-export interface Language {
-  iso639_1?: string;
-  iso639_2: string;
-  name: string;
-  nativeName?: string;
+export type Idd = {
+  root:     string;
+  suffixes: string[];
 }
 
-export interface RegionalBloc {
-  acronym: string;
-  name: string;
-  otherNames?: string[];
-  otherAcronyms?: string[];
+export type Languages = {
+  eng: string;
 }
 
-export interface Translations {
-  br: string;
-  pt: string;
-  nl: string;
-  hr: string;
-  fa?: string;
-  de: string;
-  es: string;
-  fr: string;
-  ja: string;
-  it: string;
-  hu: string;
+export type Maps = {
+  googleMaps:     string;
+  openStreetMaps: string;
+}
+
+export type Name = {
+  common:     string;
+  official:   string;
+  nativeName: NativeName;
+}
+
+export type NativeName = {
+  eng: Translation;
+}
+
+export type Translation = {
+  official: string;
+  common:   string;
 }

@@ -21,41 +21,79 @@ body {
   font-family: "Nunito Sans", sans-serif;
 }
 
-.App {
-  margin-inline: 50px;
-}
-
-.cards {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-gap: 30px;
-  row-gap: 50px;
-}
-
-.element {
-  background-color: var(--dark-ele);
-  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
-    rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
-}
-
-.country_details {
-  padding: 0px 20px 30px;
-  margin: auto;
-  color: var(--dark-text);
-}
-
-.country_details p {
-  line-height: 70%;
-}
-
-.country_details p span:nth-child(2) {
-  font-weight: 100;
-}
-
-.country_details p span:nth-child(1) {
+nav {
+  padding: 20px;
+  padding-inline: 50px;
   font-weight: 600;
+  font-size: xx-large;
+  background-color: var(--dark-ele);
 }
 
-.country_details h1 {
-  font-weight: 800;
+.App {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+input {
+  box-sizing: border-box; /* add this to include padding and border in width/height */
+  width: 400px;
+  height: 55px;
+  padding-left: 15px; /* instead of text-indent */
+  color: var(--dark-text);
+  background-color: var(--dark-ele);
+  border: none;
+  border-radius: 5px;
+}
+
+input::placeholder {
+  color: inherit;
+}
+
+select {
+  box-sizing: border-box; /* add this to include padding and border in width/height */
+  width: max-content;
+  height: 55px;
+  padding: 0px 20px; /* instead of text-indent */
+  color: var(--dark-text);
+  background-color: var(--dark-ele);
+  border: none;
+  border-radius: 5px;
+}
+
+option {
+  color: var(--dark-text);
+  padding: 10px;
+  margin: 30px;
+}
+
+.spinnerBody {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(10px);
+}
+
+.spinner {
+  z-index: 1;
+  height: 60px;
+  width: 60px;
+  border: 6px solid rgb(151, 197, 197);
+  margin: auto;
+  border-radius: 50%;
+  border-top: 6px solid var(--dark-ele);
+  animation: spin 2s ease infinite;
+  justify-content: center; /* Centers horizontally */
+  align-items: center;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
 }
