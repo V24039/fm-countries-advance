@@ -6,7 +6,7 @@ interface ICardsProps {
   countryDetails: CountryDetails[];
 }
 
-const Cards = ({ countryDetails }: ICardsProps) => {
+export const Cards = ({ countryDetails }: ICardsProps) => {
   return (
     <div className="cards">
       {countryDetails?.map((country, index) => (
@@ -15,5 +15,3 @@ const Cards = ({ countryDetails }: ICardsProps) => {
     </div>
   );
 };
-
-export default Cards;
