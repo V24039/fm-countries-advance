@@ -35,6 +35,18 @@ nav {
   gap: 30px;
 }
 
+p span:nth-child(2) {
+  font-weight: 100;
+}
+
+p span:nth-child(1) {
+  font-weight: 600;
+}
+
+h1 {
+  font-weight: 800;
+}
+
 input {
   box-sizing: border-box; /* add this to include padding and border in width/height */
   width: 400px;

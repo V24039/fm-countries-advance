@@ -21,15 +21,3 @@
 .country_details p {
   line-height: 70%;
 }
-
-.country_details p span:nth-child(2) {
-  font-weight: 100;
-}
-
-.country_details p span:nth-child(1) {
-  font-weight: 600;
-}
-
-.country_details h1 {
-  font-weight: 800;
-}

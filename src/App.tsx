@@ -3,7 +3,7 @@ import "./App.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { CountryDetailsPage, HomePage } from "./pages";
 
-interface AppContextType {
+export interface AppContextType {
   loading: boolean;
   setLoading: (loading: boolean) => void;
 }
