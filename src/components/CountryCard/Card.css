@@ -10,6 +10,11 @@
   background-color: var(--dark-ele);
   box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
     rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+  transition: .5s transform ease-out;
+  transform: scale(1) translateZ(0);
+  &:hover{
+    transform: scale(1.06) translateZ(0);
+  }
 }
 
 .country_details {
