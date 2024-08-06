@@ -29,6 +29,7 @@ export type CountryDetails = {
   startOfWeek: string;
   capitalInfo: CapitalInfo;
   subregion: string;
+  borders: string[]
 };
 
 export type CapitalInfo = {

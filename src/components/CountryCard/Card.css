@@ -17,6 +17,11 @@
   }
 }
 
+.element img {  
+  width: 100%;
+  height: 250px;
+}
+
 .country_details {
   padding: 0px 20px 30px;
   margin: auto;

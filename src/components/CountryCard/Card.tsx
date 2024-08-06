@@ -18,7 +18,6 @@ const Card = ({ countryDetail }: ICardProps) => {
       <img
         alt={countryDetail?.flags.alt}
         src={countryDetail?.flags.png}
-        height="250px"
       />
       <div className="country_details">
         <h2 style={{ wordWrap: "break-word" }}>

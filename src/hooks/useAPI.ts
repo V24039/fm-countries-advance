@@ -36,7 +36,6 @@ export const useAPI = (name: string, region?: string) => {
   };
 
   const fetchCountry = async () => {
-    console.log("in fetchcountry")
     setLoading(true);
     const response = await fetch(
       `https://restcountries.com/v3.1/name/${name}?fullText=true`

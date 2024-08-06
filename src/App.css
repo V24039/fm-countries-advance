@@ -9,10 +9,6 @@
   --light-bg: hsl(0, 0%, 98%);
 }
 
-img {
-  width: 100%;
-}
-
 body {
   background-color: var(--dark-bg);
   color: var(--dark-text);
@@ -35,12 +31,20 @@ nav {
   gap: 30px;
 }
 
-p span:nth-child(2) {
-  font-weight: 100;
+button {
+  background-color: var(--dark-bg);
+  margin-inline: 10px;
+  padding: 10px;
+  color: var(--dark-text);
 }
 
-p span:nth-child(1) {
-  font-weight: 600;
+p span {
+  &:nth-child(2) {
+    font-weight: 100;
+  };
+  &:nth-child(1) {
+    font-weight: 600;
+  };
 }
 
 h1 {
@@ -56,10 +60,9 @@ input {
   background-color: var(--dark-ele);
   border: none;
   border-radius: 5px;
-}
-
-input::placeholder {
-  color: inherit;
+  &::placeholder {
+    color: inherit;
+  }
 }
 
 select {
@@ -80,6 +83,7 @@ option {
 }
 
 .spinnerBody {
+  z-index: 1;
   position: fixed;
   top: 0;
   left: 0;
