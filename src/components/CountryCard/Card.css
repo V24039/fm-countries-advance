@@ -7,7 +7,7 @@
 }
 
 .element {
-  background-color: var(--dark-ele);
+  background-color: var(--element-bg);
   box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
     rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
   transition: .5s transform ease-out;
@@ -25,7 +25,7 @@
 .country_details {
   padding: 0px 20px 30px;
   margin: auto;
-  color: var(--dark-text);
+  color: var(--txt);
 }
 
 .country_details p {

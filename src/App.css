@@ -1,17 +1,17 @@
 @import url("https://fonts.google.com/specimen/Nunito+Sans");
 
-:root {
-  --dark-ele: hsl(209, 23%, 22%);
-  --dark-bg: hsl(207, 26%, 17%);
-  --dark-text: hsl(0, 0%, 100%);
-  --light-text: hsl(200, 15%, 8%);
-  --light-ele: hsl(0, 0%, 100%);
-  --light-bg: hsl(0, 0%, 98%);
+.light {
+  --element-bg: hsl(0, 0%, 100%);
+  --main-bg: hsl(0, 2%, 91%);
+  --txt: hsl(200, 15%, 8%);
+}
+.dark {
+  --element-bg: hsl(209, 23%, 22%);
+  --main-bg: hsl(207, 26%, 17%);
+  --txt: hsl(0, 0%, 100%);
 }
 
 body {
-  background-color: var(--dark-bg);
-  color: var(--dark-text);
   font-weight: 300;
   font-size: 16px;
   font-family: "Nunito Sans", sans-serif;
@@ -22,29 +22,37 @@ nav {
   padding-inline: 50px;
   font-weight: 600;
   font-size: xx-large;
-  background-color: var(--dark-ele);
+  background-color: var(--element-bg);
 }
 
 .App {
+  background-color: var(--main-bg);
+  color: var(--txt);
   display: flex;
   flex-direction: column;
   gap: 30px;
 }
 
 button {
-  background-color: var(--dark-bg);
+  background-color: var(--element-bg);
   margin-inline: 10px;
   padding: 10px;
-  color: var(--dark-text);
+  color: var(--txt);
+  border-radius: 5px;
+  border: none;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  &:hover {
+    cursor: pointer;
+  }
 }
 
 p span {
   &:nth-child(2) {
     font-weight: 100;
-  };
+  }
   &:nth-child(1) {
     font-weight: 600;
-  };
+  }
 }
 
 h1 {
@@ -56,8 +64,8 @@ input {
   width: 400px;
   height: 55px;
   padding-left: 15px; /* instead of text-indent */
-  color: var(--dark-text);
-  background-color: var(--dark-ele);
+  color: var(--txt);
+  background-color: var(--element-bg);
   border: none;
   border-radius: 5px;
   &::placeholder {
@@ -70,14 +78,14 @@ select {
   width: max-content;
   height: 55px;
   padding: 0px 20px; /* instead of text-indent */
-  color: var(--dark-text);
-  background-color: var(--dark-ele);
+  color: var(--txt);
+  background-color: var(--element-bg);
   border: none;
   border-radius: 5px;
 }
 
 option {
-  color: var(--dark-text);
+  color: var(--txt);
   padding: 10px;
   margin: 30px;
 }
@@ -102,7 +110,7 @@ option {
   border: 6px solid rgb(151, 197, 197);
   margin: auto;
   border-radius: 50%;
-  border-top: 6px solid var(--dark-ele);
+  border-top: 6px solid var(--element-bg);
   animation: spin 2s ease infinite;
   justify-content: center; /* Centers horizontally */
   align-items: center;

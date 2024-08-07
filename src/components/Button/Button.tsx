@@ -6,7 +6,8 @@ export const Button = ({ value = "" }) => {
   const [name, setName] = useState<string>("");
   const { setLoading } = useContext(AppContext);
   const navigate = useNavigate();
-  
+  const url = `/country/${name}`;
+
   useEffect(() => {
     getCountryName(value);
   }, [value]);
@@ -18,12 +19,11 @@ export const Button = ({ value = "" }) => {
       .then((res) => res.json())
       .then((res) => (responseData = res?.name?.common));
     setName(responseData || cca3);
-    console.log(responseData);
     setLoading(false);
   };
 
   return (
-    <button key={`border_${value}`} onClick={() => navigate(name)}>
+    <button key={`border_${value}`} onClick={() => navigate(url)}>
       {name}
     </button>
   );

@@ -25,12 +25,12 @@ function App() {
           </div>
         )}
         <nav>Where in the world</nav>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/country/:name" element={<CountryDetailsPage />} />
-        </Routes>
-      </BrowserRouter>
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/country/:name" element={<CountryDetailsPage />} />
+          </Routes>
+        </BrowserRouter>
       </div>
     </AppContext.Provider>
   );

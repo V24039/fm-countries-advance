@@ -13,3 +13,12 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
 }
+
+.back_button {
+  width: 100px;
+  display: flex;
+  font-size: large;
+  margin-left: 50px;
+  align-items: center;
+  justify-content: center;
+}
