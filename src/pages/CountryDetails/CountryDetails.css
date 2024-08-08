@@ -1,12 +1,13 @@
 .details {
   display: flex;
-  padding: 90px;
+  padding: 10px;
+  padding-inline: 50px;
   gap: 100px;
 }
 
 .details img {
   width: 50%;
-  height: 450px;
+  aspect-ratio: 1/.5;
 }
 
 .stats {
@@ -21,4 +22,20 @@
   margin-left: 50px;
   align-items: center;
   justify-content: center;
+}
+
+@media (max-width: 800px) {
+  .stats {
+    grid-template-columns: 1fr;
+  }
+  .details img {
+    width: 100%;
+    height: fit-content;
+  }
+  
+  .details {
+    flex-direction: column;
+    gap: 0px;
+    padding: 20px;
+  }
 }
