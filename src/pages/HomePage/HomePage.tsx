@@ -8,7 +8,7 @@ const HomePage = () => {
 
   const debouncedSearch = useDebounce(countryName, 500);
 
-  const { data, fetchData, fetchRegion } = useAPI(countryName, region);
+  const { data, error, fetchData, fetchRegion } = useAPI(countryName, region);
 
   const handleSearch = (value: string) => {
     setCountryName(value);
@@ -30,7 +30,22 @@ const HomePage = () => {
   return (
     <>
       <SearchBar onSearch={handleSearch} handleRegion={handleRegion} />
-      <Cards countryDetails={data} />
+      {error ? (
+        <div
+          style={{
+            position: "absolute",
+            top: "50%",
+            left: "40%",
+            color: "red",
+            fontSize: "20px",
+            fontWeight: "600"
+          }}
+        >
+          Something went wrong! Please try again
+        </div>
+      ) : (
+        <Cards countryDetails={data} />
+      )}
     </>
   );
 };

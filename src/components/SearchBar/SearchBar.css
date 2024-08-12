@@ -4,4 +4,13 @@
   padding-inline: 50px;
 }
 
+@media (max-width: 700px) {
+  .search_bar {
+    flex-direction: column;
+    gap: 10px;
+  }
 
+  input{
+    width: 70% !important;
+  }
+}

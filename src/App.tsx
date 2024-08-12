@@ -1,4 +1,4 @@
-import { createContext, useEffect, useState } from "react";
+import { createContext, useState } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { CiDark, CiLight } from "react-icons/ci";
 
@@ -19,20 +19,11 @@ export const AppContext = createContext<AppContextType>({
 function App() {
   const [loading, setLoading] = useState<boolean>(true);
   const [currentTheme, setCurrentTheme] = useState<boolean>(false);
-  const appDiv = document.getElementById("app");
-
-  useEffect(() => {
-    if (currentTheme) {
-      document.documentElement.classList.remove("light");
-      document.documentElement.classList.add("dark");
-    } else {
-      document.documentElement.classList.add("light");
-      document.documentElement.classList.remove("dark");
-    }
-  }, [currentTheme]);
 
   const handleThemeChange = () => {
     setCurrentTheme((prev) => !prev);
+    document.documentElement.classList.toggle("dark", !currentTheme);
+    document.documentElement.classList.toggle("light", currentTheme);
   };
 
   return (
