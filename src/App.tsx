@@ -1,7 +1,10 @@
-import { createContext, useState } from "react";
-import "./App.css";
+import { createContext, useEffect, useState } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { CiDark, CiLight } from "react-icons/ci";
+
 import { CountryDetailsPage, HomePage } from "./pages";
+
+import "./App.css";
 
 export interface AppContextType {
   loading: boolean;
@@ -15,6 +18,22 @@ export const AppContext = createContext<AppContextType>({
 
 function App() {
   const [loading, setLoading] = useState<boolean>(true);
+  const [currentTheme, setCurrentTheme] = useState<boolean>(false);
+  const appDiv = document.getElementById("app");
+
+  useEffect(() => {
+    if (currentTheme) {
+      document.documentElement.classList.remove("light");
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.add("light");
+      document.documentElement.classList.remove("dark");
+    }
+  }, [currentTheme]);
+
+  const handleThemeChange = () => {
+    setCurrentTheme((prev) => !prev);
+  };
 
   return (
     <AppContext.Provider value={{ loading, setLoading }}>
@@ -24,7 +43,20 @@ function App() {
             <div className="spinner" />
           </div>
         )}
-        <nav>Where in the world</nav>
+        <nav>
+          Where in the world
+          <div className="theme" onClick={handleThemeChange}>
+            {currentTheme ? (
+              <>
+                <CiDark size={30} /> Dark Mode
+              </>
+            ) : (
+              <>
+                <CiLight size={30} /> Light Mode
+              </>
+            )}
+          </div>
+        </nav>
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<HomePage />} />

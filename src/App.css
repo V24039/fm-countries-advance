@@ -18,11 +18,21 @@ body {
 }
 
 nav {
+  display: flex;
+  justify-content: space-between;
   padding: 20px;
   padding-inline: 50px;
   font-weight: 600;
   font-size: xx-large;
   background-color: var(--element-bg);
+}
+
+nav .theme{
+  font-weight: 400;
+  font-size: x-large;
+  display: flex;
+  gap: 5px;
+  align-items: center;
 }
 
 .App {
@@ -31,6 +41,7 @@ nav {
   display: flex;
   flex-direction: column;
   gap: 30px;
+  height: 100vh;
 }
 
 button {
